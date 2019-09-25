@@ -14,7 +14,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    var i = 1
+    
+    var p1dice = Int.random(in: 1..<7)
+    var p2dice = Int.random(in: 1..<7)
+    
+    
+    
+    
+    
+    
 
 }
 
