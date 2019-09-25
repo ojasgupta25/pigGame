@@ -14,7 +14,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    var i = 1
+    
+    @IBAction func playerTop(_ sender: UIButton) {
+    }
+    
+    @IBAction func bottomPlayer(_ sender: Any) {
+    }
 
+
+    @IBOutlet weak var diceImage: UIImageView!
+    
+    @IBOutlet weak var topscore: UILabel!
+    @IBOutlet weak var bottomscore: UILabel!
 }
 
