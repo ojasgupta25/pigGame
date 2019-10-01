@@ -10,43 +10,56 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var diceImage: UIImageView!
+    @IBOutlet weak var topscore: UILabel!
+    @IBOutlet weak var bottomscore: UILabel!
+    // making object of player one
+    var playone = player1()
+    // making player 2
+    var playtwo = player2()
+    //initialize dice 1
+    var p1dice = 0
+    //initialize dice 2
+    var p2dice = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
     }
-    
-    
-    
-    // making object of player one
-     var playone = player1()
-    // making player 2
-    var playtwo = player2()
-    
     
     
     
     @IBAction func playerTop(_ sender: UIButton) {
+        
+        p1dice = Int.random(in: 1..<7)
+        playone.add(s: p1dice)
+        
     }
     
     @IBAction func bottomPlayer(_ sender: Any) {
+        
+        p2dice = Int.random(in: 1..<7)
+        playtwo.add(s: p2dice)
+        
+        
+        
     }
     
     
 
-    @IBOutlet weak var diceImage: UIImageView!
-    
-    @IBOutlet weak var topscore: UILabel!
-    @IBOutlet weak var bottomscore: UILabel!
 }
 
 
 
-class player1: ViewController {  // player one object
+class player1 {  // player one object
     var score = 0               // player one score
-    func add(_ s: Int)             // player one increasing score
+    func add(s: Int)             // player one increasing score
     {
         score += s
+            if s == 1{
+                score = 0
+            }
     }
     
     
@@ -54,9 +67,12 @@ class player1: ViewController {  // player one object
 }
 class player2 {  // player two object
     var score2 = 0               // player two score
-    func add(_ s: Int)             // player two increasing score
+    func add(s: Int)             // player two increasing score
     {
         score2 += s
+            if s == 1{
+                score2 = 0
+            }
     }
     
 }
