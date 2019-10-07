@@ -55,10 +55,11 @@ self.view.backgroundColor = UIColor.black
         case 0:
             p1turn = true
             p2turn = false
-            
+            playone.default1 = playone.score
         case 1:
             p2turn = true
             p1turn = false
+            playtwo.default2 = playtwo.score2
         default:
             break
         }
@@ -153,13 +154,14 @@ self.view.backgroundColor = UIColor.black
 
 
 class player1 {  // player one object
+    var default1 = 0
     var score = 0               // player one score
     func add(s: Int)             // player one increasing score
     {
         score += s
-           // if s == 1{
-           //     score = 0
-           // }
+            if s == 1{
+                score = default1
+            }
     }
     func get() -> Int {
         return score
@@ -168,13 +170,14 @@ class player1 {  // player one object
     
 }
 class player2 {  // player two object
+    var default2 = 0
     var score2 = 0               // player two score
     func add2(s: Int)             // player two increasing score
     {
         score2 += s
-        //    if s == 1{
-         //       score2 = 0
-         //   }
+           if s == 1{
+                score2 = default2
+           }
     }
     func get() -> Int {
         return score2
